@@ -1,0 +1,5 @@
+node_modules/
+.env
+agent/data/library.db
+agent/runs/
+harness/results/

@@ -1,0 +1,32 @@
+{
+  "name": "rag-agent",
+  "version": "1.0.0",
+  "description": "A tax research agent: one model, a few tools, a SQLite library of NZ tax law.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.ts",
+    "ask": "node --env-file-if-exists=.env src/cli.ts",
+    "seed": "node --env-file-if-exists=.env scripts/seed.ts",
+    "fetch-law": "node scripts/fetch-law.ts",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^4.0.71",
+    "@hono/node-server": "^2.1.1",
+    "ai": "^7.0.107",
+    "hono": "^4.13.8",
+    "node-html-parser": "9.0.4",
+    "robots-parser": "3.0.1",
+    "unpdf": "1.8.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6",
+    "typescript": "~6.0.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "rag-agent-harness",
+  "version": "1.0.0",
+  "description": "Asks an agent a set of questions, checks each answer with code, has a judge grade it, and writes one HTML report.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "eval": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning src/eval.ts",
+    "judge-check": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning src/judge-check.ts",
+    "report": "node --disable-warning=ExperimentalWarning src/report.ts",
+    "check-quotes": "node --disable-warning=ExperimentalWarning scripts/check-quotes.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.95",
+    "@ai-sdk/openai": "^4.0.71",
+    "ai": "^7.0.107",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6",
+    "typescript": "~6.0.3"
+  }
+}
